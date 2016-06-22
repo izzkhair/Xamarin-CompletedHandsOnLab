@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TiblerZone.EditAdd" >
+  
+<ContentPage.Content>
+    <ScrollView>
+      <Grid x:Name="GridSec">
+        <Grid.RowDefinitions >
+          <RowDefinition Height="35" />
+          <RowDefinition Height="40" />
+          <RowDefinition Height="40" />
+          <RowDefinition Height="40" />
+          <RowDefinition Height="90" />
+          <RowDefinition Height="40" />
+          <RowDefinition Height="40" />
+          <RowDefinition Height="40" />
+          <RowDefinition Height="75" />
+          <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        
+        
+       <Label  Grid.Row="0" Text="Lecture Topic"  FontSize="16" Margin="10,5,10,0" />
+       <Entry Grid.Row="1" Placeholder="Please Enter Lecture Topic" Margin="10,0,10,5" x:Name="Topic"/>
+       <Label Grid.Row="2" Text="Lecture Location" FontSize="16" Margin="10,10,10,0"/>
+       <Entry Grid.Row="3" Placeholder="Please Enter Lecture Location"   Margin="10,0,10,5" HeightRequest="30"  x:Name="Location"/>  
+     
+       <StackLayout Orientation="Vertical" Grid.Row="4" Margin="0,10,0,10">
+         <Label Text="Time And Date" FontSize="16" Margin="10,0,10,0"/>
+         <BoxView  BackgroundColor="Color.White" WidthRequest ="200" HeightRequest = "0.5" Margin="10,0,10,5"  />
+         <StackLayout Orientation="Horizontal">
+             <TimePicker  HorizontalOptions="Start" Margin="10,0,0,0" x:Name="TimePick"/>
+             <DatePicker  HorizontalOptions="End" Margin="0,0,10,0" x:Name="DatePick"/> 
+          </StackLayout>
+        <BoxView  BackgroundColor="Color.White" WidthRequest = "200" HeightRequest = "0.5" Margin="10,0,10,0"/>
+      </StackLayout >
+      <Label  Grid.Row="5" Text="Lecture Category" FontSize="16" Margin="10,10,10,0" />
+      <Label  Grid.Row="7" Text="Lecture Description"  FontSize="16" Margin="10,10,10,0" />     
+      <Editor  Grid.Row="8" Text="Please Enter Description Here"  MinimumHeightRequest="200" Margin="10,0,10,5" x:Name="bigtb"/>
+   
+        <Grid Grid.Row="9" >
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            
+          </Grid.ColumnDefinitions>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+      <Button Text="Save" x:Name="gosave" Grid.Column="0" Grid.Row="0" Clicked="saveClicked" BackgroundColor="#009688" TextColor="White"/>
+      <Button Text="Delete" x:Name="godelete" Grid.Column="1" Grid.Row="0" Clicked="deleteClicked" BackgroundColor="#F44336" TextColor="White"/>
+          
+          </Grid>
+      </Grid >
+    </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

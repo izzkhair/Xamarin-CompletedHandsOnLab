@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="TiblerZone.TiblerZone" android:installLocation="auto" android:versionCode="1" android:versionName="TiblerZone">
+	<uses-sdk android:minSdkVersion="15" />
+	<application android:label="TiblerZone" android:icon="@drawable/logfin">
+    <application android:theme="@android:style/Theme.Holo.Light" />
+    
+  </application>
+
+</manifest>

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TiblerZone.Page2">
+  <ContentPage.Content>
+    
+    <Grid x:Name="GridMain">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="1*" />
+      </Grid.ColumnDefinitions>
+
+      <Grid.RowDefinitions>
+     
+        <RowDefinition Height="90" />
+        <RowDefinition Height="70" />
+        <RowDefinition Height="1*" />
+
+      </Grid.RowDefinitions>
+
+    
+      
+      <StackLayout Grid.Row="0" Orientation="Horizontal"  Margin="0,20,0,20">
+        <Button x:Name="AddLecture" Text="+ Lecture" BackgroundColor="#009688" HorizontalOptions="FillAndExpand" BorderRadius="2" TextColor="White" Clicked="gotoadd"/>
+        <Button x:Name="AddTask" Text="+ Task" BackgroundColor="#2196F3" HorizontalOptions="FillAndExpand" BorderRadius="2" TextColor="White" Clicked="gotoaddtask"/>
+        <Button x:Name="AddMeeting" Text="+ Meeting" BackgroundColor="#FF5722" HorizontalOptions="FillAndExpand" BorderRadius="2" TextColor="White" Clicked="gotoaddmeeting"/>
+      </StackLayout>
+   
+      <ListView  x:Name="MainListView" RowHeight="120" Grid.Row="2" ItemSelected="listItemSelected">
+        <ListView.ItemTemplate >
+          <DataTemplate>
+            <ViewCell >
+        
+              <!--<AbsoluteLayout x:Name="totalizz" >
+                <Label Text = "{Binding Name}" FontSize="24"  AbsoluteLayout.LayoutBounds="10,5,300,50" x:Name="hello" />
+                <Label Text = "{Binding Location}" FontSize="18"  AbsoluteLayout.LayoutBounds="10,40,130,30"/>
+                <Label Text="{Binding Description}" FontSize="16" AbsoluteLayout.LayoutBounds="10,60,150,50" />
+                <Label TextColor="{Binding color}" Text="{Binding category}" AbsoluteLayout.LayoutBounds="300,15,100,100" HorizontalOptions="End"/>
+                <Label Text="{Binding timeitem}" AbsoluteLayout.LayoutBounds="300,50,120,50" FontAttributes="Bold" HorizontalOptions="End" />
+              </AbsoluteLayout>-->
+              
+            
+              <Grid>
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="1*"/>
+                  <RowDefinition Height="1*"/>
+                  <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>  
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="1.5*"/>
+                  <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>  
+                <Label TextColor="{Binding color}"  Text = "{Binding Name}" FontAttributes="Bold" FontSize="20"  x:Name="hello" Grid.Column="0" Grid.Row="0" Margin="10,10,0,0" LineBreakMode="NoWrap"/>
+                <Label Text = "{Binding Location}" FontSize="18" Grid.Column="0" Grid.Row="1" Margin="10,5,0,0" VerticalTextAlignment="Start" LineBreakMode="NoWrap"/>
+                <Label Text="{Binding Description}" FontSize="16" Grid.Column="0" Grid.Row="2" Margin="10,0,0,10" TextColor="Gray" LineBreakMode="NoWrap" />
+                <Label TextColor="{Binding color}" Text="{Binding category}" HorizontalOptions="End" FontAttributes="Bold" Grid.Column="1" Grid.Row="1" Margin="0,10,10,0" LineBreakMode="NoWrap"/>
+                <Label Text="{Binding stringDate}"  FontAttributes="Bold" HorizontalOptions="End" Grid.Column="1" Grid.Row="2" Margin="0,0,10,10" LineBreakMode="NoWrap"/>
+              </Grid>
+            
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+
+    </Grid>
+
+  </ContentPage.Content>
+</ContentPage>
